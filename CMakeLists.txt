@@ -65,7 +65,7 @@ target_link_libraries(serial_example ${PROJECT_NAME})
 include_directories(include)
 
 ## Install executable
-install(TARGETS ${PROJECT_NAME}
+install(TARGETS ${PROJECT_NAME} EXPORT NAV_CORE
     ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
     LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
     RUNTIME DESTINATION ${CATKIN_GLOBAL_BIN_DESTINATION}
@@ -74,6 +74,8 @@ install(TARGETS ${PROJECT_NAME}
 ## Install headers
 install(FILES include/serial/serial.h include/serial/v8stdint.h
   DESTINATION ${CATKIN_GLOBAL_INCLUDE_DESTINATION}/serial)
+
+#install(TARGETS ${PROJECT_NAME} EXPORT NAV_CORE ... )
 
 ## Tests
 if(CATKIN_ENABLE_TESTING)
